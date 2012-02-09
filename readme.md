@@ -6,4 +6,7 @@ To use it in your theme call
 	
 You may add an array of [`wp_nav_menu()`][1] options to customize the output.
 
-[1] http://codex.wordpress.org/Function_Reference/wp_nav_menu
+This plugin was created as an answer for a [question on WordPress.StackExchange.com][2]
+
+[1]: http://codex.wordpress.org/Function_Reference/wp_nav_menu "see Codex description".
+[2]: http://wordpress.stackexchange.com/questions/41695/adding-a-nav-menu-to-post-admin
