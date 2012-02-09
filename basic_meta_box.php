@@ -1,34 +1,15 @@
 <?php # -*- coding: utf-8 -*-
 declare( encoding = 'UTF-8' );
-/**
- * Plugin Name: Basic Meta Box
- * Description: Create a simple meta box. Demo plugin.
- * Version:     2012.02.09
- * Required:    3.3
- * Author:      Thomas Scholz
- * Author URI:  http://toscho.de
- * License:     GPL
- *
- *
- *
- * Basic Meta Box, Copyright (C) 2012 Thomas Scholz
- *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- */
-
 // Called directly or at least not in WordPress context.
 ! defined( 'ABSPATH' ) and exit;
 
 #add_action( 'plugins_loaded', array ( 'T5_Basic_Meta_Box', 'init' ) );
 
+/**
+ * Create a simple meta box. Demo plugin.
+ *
+ * @author Thomas Scholz, http://toscho.de
+ */
 class T5_Basic_Meta_Box
 {
 	/**
