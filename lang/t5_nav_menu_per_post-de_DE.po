@@ -1,0 +1,77 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: \n"
+"X-Poedit-Country: \n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: \n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#. translators: plugin header field 'Name'
+#: t5-nav-per-post.php:0
+#@ t5_nav_menu_per_post
+msgid "T5 Nav Menu Per Post"
+msgstr ""
+
+#. translators: plugin header field 'Description'
+#: t5-nav-per-post.php:0
+#@ t5_nav_menu_per_post
+msgid "Select a nav menu per post or page"
+msgstr "Wähle ein Navigationsmenu per Artikel oder Seite"
+
+#. translators: plugin header field 'Author'
+#: t5-nav-per-post.php:0
+#@ t5_nav_menu_per_post
+msgid "Thomas Scholz"
+msgstr ""
+
+#. translators: plugin header field 'AuthorURI'
+#: t5-nav-per-post.php:0
+#@ t5_nav_menu_per_post
+msgid "http://toscho.de"
+msgstr ""
+
+#. translators: plugin header field 'Version'
+#: t5-nav-per-post.php:0
+#@ t5_nav_menu_per_post
+msgid "2012.02.09"
+msgstr ""
+
+#: t5-nav-per-post.php:65
+#@ t5_nav_menu_per_post
+msgid "Custom Nav Menu"
+msgstr "Eigenes Navigationsmenu"
+
+#: t5-nav-per-post.php:68
+#@ t5_nav_menu_per_post
+msgid "Select a menu."
+msgstr "Wähle ein Menu."
+
+#: t5-nav-per-post.php:121
+#@ t5_nav_menu_per_post
+msgid "There are no menus."
+msgstr "Keine Menus vorhanden."
+
+#: t5-nav-per-post.php:127
+#, php-format
+#@ t5_nav_menu_per_post
+msgid " <a href=\"%s\">Create one</a>."
+msgstr " <a href=\"%s\">Erstelle eines</a>."
+
+#: t5-nav-per-post.php:138
+#@ t5_nav_menu_per_post
+msgid "Pick one"
+msgstr "Wähle eins"
+
