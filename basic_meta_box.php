@@ -236,8 +236,6 @@ class T5_Basic_Meta_Box
 		foreach ( $this->fields as $key => $properties )
 		{
 			$content = get_post_meta( $post->ID, $key, TRUE );
-			$arr_content = get_post_meta( $post->ID, $key );
-			print '<pre>' . htmlspecialchars( print_r( $arr_content, TRUE ) ) . '</pre>';
 			$label = "<label for='$key'>" . $properties['label'] . "</label>";
 
 			// You may extend the following to handle more types.
