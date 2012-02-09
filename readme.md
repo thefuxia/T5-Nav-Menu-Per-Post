@@ -4,7 +4,7 @@ To use it in your theme call
 
 	do_action( 't5_custom_nav_menu' );
 	
-You may add an array of [`wp_nav_menu`][1] options to customize the output.
+You may add an array of [wp_nav_menu][1] options to customize the output.
 
 This plugin was created as an answer for a [question on WordPress.StackExchange.com][2]
 
