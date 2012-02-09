@@ -39,6 +39,12 @@ add_action( 'plugins_loaded', array ( 'T5_Nav_Menu_Per_Post', 'init' ) );
 class T5_Nav_Menu_Per_Post extends T5_Basic_Meta_Box
 {
 	/**
+	 * Stores available menus.
+	 *
+	 * @type array
+	 */
+	protected $menus = array();
+	/**
 	 * Creates a new instance. Called on 'after_setup_theme'.
 	 *
 	 * @see    __construct()
@@ -92,11 +98,53 @@ class T5_Nav_Menu_Per_Post extends T5_Basic_Meta_Box
 			$current_value = get_post_meta( $post->ID, $key, TRUE );
 			if ( 'nav_menu_drop_down' == $properties['method'] )
 			{
-				print "<label for='id_$key'>"
-					. $properties['label'] . '</label><br />';
-				$this->nav_menu_drop_down( $key, $current_value );
+				$this->prepare_menus();
+
+				if ( ! empty ( $this->menus ) )
+				{
+					print "<p><label for='id_$key'>" . $properties['label']
+						. '</label><br />';
+					$this->nav_menu_drop_down( $key, $current_value );
+					print '</p>';
+				}
 			}
 		}
+	}
+
+	/**
+	 * Query WordPress for available menus.
+	 *
+	 * @param bool $print
+	 * @return void
+	 */
+	protected function prepare_menus( $print = TRUE )
+	{
+		// array of menu objects
+		$menus = wp_get_nav_menus();
+		$out   = '';
+
+		// No menu found.
+		if ( empty ( $menus ) or is_a( $menus, 'WP_Error' )  )
+		{
+			// Give some feedback …
+			$out .= '<p>';
+			$out .= __( 'There are no menus.', 't5_nav_menu_per_post' );
+
+			// … and make it usable …
+			if ( current_user_can( 'edit_theme_options' ) )
+			{
+				$out .= sprintf(
+					__( ' <a href="%s">Create one</a>.', 't5_nav_menu_per_post' ),
+					admin_url( 'nav-menus.php' )
+				);
+			}
+			$out .= '</p>';
+			// … and stop.
+			$print and print $out;
+			return $out;
+		}
+
+		$this->menus = $menus;
 	}
 
 	/**
@@ -111,27 +159,7 @@ class T5_Nav_Menu_Per_Post extends T5_Basic_Meta_Box
 	function nav_menu_drop_down( $name, $selected = '', $print = TRUE )
 	{
 		// array of menu objects
-		$menus = wp_get_nav_menus();
-		$out   = '';
-
-		// No menu found.
-		if ( empty ( $menus ) or is_a( $menus, 'WP_Error' )  )
-		{
-			// Give some feedback …
-			$out .= __( 'There are no menus.', 't5_nav_menu_per_post' );
-
-			// … and make it usable …
-			if ( current_user_can( 'edit_theme_options' ) )
-			{
-				$out .= sprintf(
-					__( ' <a href="%s">Create one</a>.', 't5_nav_menu_per_post' ),
-					admin_url( 'nav-menus.php' )
-				);
-			}
-			// … and stop.
-			$print and print $out;
-			return $out;
-		}
+		$menus = $this->menus;
 
 		// Set name and ID to let you use a <label for='id_$name'>
 		$out = "<select name='$name' id='id_$name'>\n";
