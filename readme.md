@@ -6,7 +6,8 @@ To use it in your theme call
 	
 You may add an array of [`wp_nav_menu()` options][1] to customize the output.
 
-This plugin was created as an answer for a [question on WordPress.StackExchange.com][2]
+This plugin was created as an answer for a [question on WordPress.StackExchange.com][2]. 
+There you will find screenshots and a detailed explanation.
 
 
 [1]: http://codex.wordpress.org/Function_Reference/wp_nav_menu "see Codex description"
