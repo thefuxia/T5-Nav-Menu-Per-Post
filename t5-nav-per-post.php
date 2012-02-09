@@ -74,7 +74,7 @@ class T5_Nav_Menu_Per_Post extends T5_Basic_Meta_Box
 		// supported post types.
 		$this->post_types = apply_filters(
 			't5_nav_menu_per_post_post_types',
-			$post_types
+			$this->post_types
 		);
 		parent::__construct();
 	}
